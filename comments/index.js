@@ -36,6 +36,16 @@ app.post('/posts/:id/comments', async (req, res) => {
     res.status(201).send(comments);
 });
 
+//34. Receiving Events
+//Creating event handlers in both post and comments application
+//to receive events from event-bus
+app.post('/events', (req, res) => {
+    console.log('Events Received: ', req.body.type);
+
+    res.send({});
+});
+
+
 // Listening to port 4001 (app.listen)
 app.listen(4001, () =>  {
     console.log("Listening to port 4001");

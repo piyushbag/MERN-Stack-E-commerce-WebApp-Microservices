@@ -36,6 +36,15 @@ app.post('/posts', async (req, res) => {
     res.status(201).send(posts[id]);
 });
 
+//34. Events Handlers received by posts and comments application from event bus
+app.post('/events', (req, res) => {
+    console.log('Received Event', req.body.type);
+
+    res.send({});
+});
+
+
+
 // listen to port no?
 app.listen(4000, () => {
     console.log('Listening on 4000');
